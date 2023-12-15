@@ -1,5 +1,11 @@
+import Layout from '@/components/layout'
+
 const HomePage = () => {
-  return <div>HomePage</div>
+  return (
+    <Layout>
+      <div className="flex justify-center">Coming Soon!</div>
+    </Layout>
+  )
 }
 
 export default HomePage
