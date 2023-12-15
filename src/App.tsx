@@ -1,9 +1,13 @@
-import { Button } from '@/components/button'
+import { router } from './router'
+import { Fragment } from 'react'
+import { RouterProvider } from 'react-router-dom'
 
-export default function Home() {
+const App = () => {
   return (
-    <div>
-      <Button>Click me</Button>
-    </div>
+    <Fragment>
+      <RouterProvider router={router} />
+    </Fragment>
   )
 }
+
+export default App
