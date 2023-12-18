@@ -1,12 +1,18 @@
-import { router } from './router'
-import { Fragment } from 'react'
 import { RouterProvider } from 'react-router-dom'
+
+import { Toaster } from '@/components/ui/toaster'
+import { AxiosInterceptor } from '@/config/axios'
+import { NotificationProvider } from '@/providers/notification-provider'
+import { router } from '@/router'
 
 const App = () => {
   return (
-    <Fragment>
-      <RouterProvider router={router} />
-    </Fragment>
+    <NotificationProvider>
+      <AxiosInterceptor>
+        <RouterProvider router={router}></RouterProvider>
+        <Toaster />
+      </AxiosInterceptor>
+    </NotificationProvider>
   )
 }
 

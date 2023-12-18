@@ -26,7 +26,8 @@ module.exports = {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'no-console': 'error',
     'unused-imports/no-unused-imports': 'error',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-explicit-any': 'off'
   },
   ignorePatterns: ['tailwind.config.js', 'postcss.config.js', 'vite.config.ts']
 }
