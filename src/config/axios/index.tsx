@@ -17,7 +17,7 @@ const AxiosInterceptor: FC<IAxiosInterceptorProps> = ({ children }) => {
 
   useEffect(() => {
     const responseInterceptor = (response: AxiosResponse) => {
-      return response.data
+      return response
     }
 
     const getDescription = (data: any) => {
@@ -38,6 +38,11 @@ const AxiosInterceptor: FC<IAxiosInterceptorProps> = ({ children }) => {
 
         case HttpStatusCode.InternalServerError: {
           showErrorNotification('500 Server Error', getDescription(error.response?.data))
+          break
+        }
+
+        default: {
+          showErrorNotification('Something Went Wrong', getDescription(error.response?.data))
           break
         }
       }
