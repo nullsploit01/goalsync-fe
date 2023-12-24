@@ -10,7 +10,7 @@ interface ICountriesProps {
 
 const Countries: FC<ICountriesProps> = ({ countries }) => {
   return (
-    <div className="flex flex-wrap content-center">
+    <div className="flex flex-wrap content-center justify-center">
       {countries ? (
         countries.map((country, index) => {
           return <Country name={country.name} flag={country.flag} code={country.code} key={index} />

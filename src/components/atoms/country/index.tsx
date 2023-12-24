@@ -10,17 +10,19 @@ interface ICountryProps {
 
 const Country: FC<ICountryProps> = ({ name, code, flag }) => {
   return (
-    <div className="w-48 h-24 m-20">
+    <div className="m-10 cursor-pointer bg-gray-50 p-4 text-center">
       <img
+        className="h-24 w-40"
         src={flag ?? defaultImage}
         onError={({ currentTarget }) => {
           currentTarget.onerror = null
           currentTarget.src = defaultImage
         }}
       />
-      <>
-        {name} {code && `${code}`}
-      </>
+
+      <div className="flex-wrap">
+        {name} {code && `(${code})`}
+      </div>
     </div>
   )
 }
