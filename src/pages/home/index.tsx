@@ -26,11 +26,15 @@ const HomePage = () => {
     }
   }
 
+  const onCountryClick = (name: string) => {
+    teamsService.setFavouriteCountry(name)
+  }
+
   return (
     <Layout>
       <div className="flex justify-center text-3xl py-10">Select Country</div>
       <div>
-        <Countries countries={_countries} />
+        <Countries onCountryClick={onCountryClick} countries={_countries} />
       </div>
     </Layout>
   )

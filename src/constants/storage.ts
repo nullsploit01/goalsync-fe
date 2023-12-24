@@ -1,3 +1,4 @@
 export const StorageKeys = {
-  countries: 'countries'
+  countries: 'countries',
+  favouriteCountries: 'favourite_countries'
 }
