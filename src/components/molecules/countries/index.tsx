@@ -6,14 +6,15 @@ import { ICountry } from '@/interfaces/api/teams'
 
 interface ICountriesProps {
   countries?: ICountry[]
+  loading?: boolean
   onCountryClick?: (name: string) => void
 }
 
-const Countries: FC<ICountriesProps> = ({ countries, onCountryClick }) => {
+const Countries: FC<ICountriesProps> = ({ countries, onCountryClick, loading = false }) => {
   return (
     <div className="flex flex-wrap content-center justify-center">
-      {countries ? (
-        countries.map((country, index) => {
+      {!loading ? (
+        countries?.map((country, index) => {
           return (
             <Country
               key={index}
